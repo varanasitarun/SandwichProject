@@ -66,14 +66,16 @@ public class DetailActivity extends AppCompatActivity {
         TextView placeOfOrigin_tv = findViewById(R.id.origin_tv);
         textView.setText(description);
         placeOfOrigin_tv.setText(placeOfOrigin);
-        //alsoKnown.setText("");
+        StringBuilder b=new StringBuilder();
         for (int i = 0; i <alsoKnownAs.size(); i++) {
-            alsoKnownAs.add(alsoKnownAs.get(i) + "\n");
+            b.append(alsoKnownAs.get(i) + "\n");
         }
-        alsoKnown.setText((CharSequence) alsoKnownAs);
-        ingredients_tv.setText("");
-        for (int i = 0; i <ingredients_tv.length(); i++) {
-            ingredients_tv.append(ingredients.get(i) + "\n");
+        alsoKnown.setText(b);
+        StringBuilder b1=new StringBuilder();
+        for (int i = 0; i <ingredients.size(); i++) {
+           b1.append(ingredients.get(i) + "\n");
         }
+
+        ingredients_tv.setText(b1);
     }
 }
